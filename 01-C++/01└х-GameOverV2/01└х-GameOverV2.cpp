@@ -1,5 +1,5 @@
 #include <stdio.h>
-void main()
+int main()
 {
 	printf("  ____   ____  ___ ___    ___       ___   __ __    ___  ____       __ \n");
 	printf(" /    | /    ||   |   |  /  _]     /   \ |  |  |  /  _]|    \     |  |\n");
