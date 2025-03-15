@@ -1,7 +1,7 @@
 // GameOverMain.cpp
 #include <stdio.h>
 
-void main()
+int main()
 {
 	printf("Game Over !\n");
 }

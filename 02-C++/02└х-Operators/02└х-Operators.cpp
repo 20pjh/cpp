@@ -1,21 +1,21 @@
 #include <stdio.h>
-void main()
+int main()
 {
 	char ch;
 	int i, j, max;
 
-	printf("¾ËÆÄºªÀ» ÀÔ·ÂÇÏ¼¼¿ä: ");
+	printf("ï¿½ï¿½ï¿½Äºï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½: ");
 	scanf("%c", &ch);
-	printf(" ÀÔ·Â¹®ÀÚ: %c(10Áø¼ö %d)\n", ch, ch);
-	printf(" ´ÙÀ½¹®ÀÚ: %c(10Áø¼ö %d)\n", ch + 1, ch + 1);
-	printf(" º¯¼öÁÖ¼Ò: 0x%x\n\n", &ch);
+	printf(" ï¿½Ô·Â¹ï¿½ï¿½ï¿½: %c(10ï¿½ï¿½ï¿½ï¿½ %d)\n", ch, ch);
+	printf(" ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: %c(10ï¿½ï¿½ï¿½ï¿½ %d)\n", ch + 1, ch + 1);
+	printf(" ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½: 0x%x\n\n", &ch);
 
-	printf("µÎ Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+	printf("ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½: ");
 	scanf("%d%d", &i, &j);
 	printf(" %d / %d    \t= %d\n", i, j, i / j);
 	printf(" %d %% %d   \t= %d\n", i, j, i%j);
 	printf(" %d/(double)%d \t= %lf\n", i, j, i / (double)j);
-	printf(" %d¿Í %dÁß Å«°ª \t= %d\n", i, j, (i>j) ? i : j);
+	printf(" %dï¿½ï¿½ %dï¿½ï¿½ Å«ï¿½ï¿½ \t= %d\n", i, j, (i>j) ? i : j);
 	printf(" %d | %d     \t= %d\n", i, j, i | j);
 	printf(" %d & %d     \t= %d\n", i, j, i&j);
 	printf(" %d ^ %d     \t= %d\n", i, j, i^j);
