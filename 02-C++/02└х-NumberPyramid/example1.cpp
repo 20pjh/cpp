@@ -1,5 +1,5 @@
 #include <cstdio>
-void main()
+int main()
 {
 	int 	height;
 

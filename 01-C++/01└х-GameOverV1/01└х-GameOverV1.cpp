@@ -1,7 +1,13 @@
-// GameOverMain.cpp
-#include <stdio.h>
+#include<iostream>
+using namespace std;
 
-int main()
-{
-	printf("Game Over !\n");
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        for(int j = 1; j <= i; j++){
+            cout << "*";
+        }
+        cout << endl;
+    }
+    system("pause");
+    return 0;
 }
