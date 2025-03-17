@@ -2,11 +2,8 @@
 using namespace std;
 
 void N(int i) {
+    
     int thousand = (i / 1000) % 10;
-    int hundred = (i / 100) % 10;
-    int ten = (i / 10) % 10;
-    int one = i % 10;
-
     if (thousand > 0) {
         if (thousand >1) {
             cout << thousand;
@@ -14,6 +11,7 @@ void N(int i) {
         cout << "천 ";
     }
 
+    int hundred = (i / 100) % 10;
     if (hundred > 0) {
         if (hundred>1) {
             cout << hundred;
@@ -21,6 +19,7 @@ void N(int i) {
         cout << "백 ";
     }
 
+    int ten = (i / 10) % 10;
     if (ten > 0) {
         if (ten >1) {
             cout << ten;
@@ -28,6 +27,7 @@ void N(int i) {
         cout << "십 ";
     }
 
+    int one = i % 10;
     if (one > 0) {
         cout << one;
     }

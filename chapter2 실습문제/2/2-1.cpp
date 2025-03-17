@@ -2,23 +2,23 @@
 using namespace std;
 
 void N(int i) {
+   
     int thousand = (i / 1000) % 10;
-    int hundred = (i / 100) % 10;
-    int ten = (i / 10) % 10;
-    int one = i % 10;
-
     if (thousand > 0) {
         cout << thousand << "천 ";
     }
 
+    int hundred = (i / 100) % 10;
     if (hundred > 0) {
         cout << hundred << "백 ";
     }
 
+    int ten = (i / 10) % 10;
     if (ten > 0) {
         cout << ten << "십 ";
     }
-
+    
+    int one = i % 10;
     if (one > 0) {
         cout << one;
     }
