@@ -1,24 +1,30 @@
 // p147_2 정수를 입력받아 각 자리 숫자를 역순으로 만들어 반환하는 함수 reverse()를 작성하라.
 
-#include <iostream>  
-#include <algorithm>  
-#include <string>  
+#include <iostream>
+using namespace std;
 
-using namespace std;  // std 네임스페이스 사용
+// 정수를 뒤집는 함수 정의
+int reverse(int num) {
+    int reversed = 0; // 뒤집힌 숫자를 저장할 변수
 
-// reverseNumber 함수 정의: 숫자를 역순으로 바꾸는 함수
-int reverseNumber(int num) 
-{
-    string str = to_string(num);  // 숫자 num을 문자열로 변환
-    reverse(str.begin(), str.end());  // 문자열의 처음과 끝을 바꾸면서 전체 문자열을 뒤집음
-    return stoi(str);  // 뒤집어진 문자열을 다시 정수로 변환하여 반환
+    // 숫자를 뒤집는 과정
+    while (num != 0) {
+        reversed = reversed * 10 + (num % 10); // 마지막 자릿수를 새로운 숫자의 앞자리에 추가
+        num /= 10; // 기존 숫자의 마지막 자릿수를 제거
+    }
+
+    return reversed; // 뒤집힌 숫자 반환
 }
 
-int main() 
-{
-    int num = 12345;  // 변수 num에 12345 할당
-    cout << "Original: " << num << "\n";  // 원본 숫자 출력
-    cout << "Reversed: " << reverseNumber(num) << "\n";  // 역순으로 변환된 숫자 출력
-    return 0;  // 프로그램 정상 종료
-}
+int main() {
+    int num;
 
+    // 사용자로부터 정수 입력 받기
+    cout << "정수를 입력하세요: ";
+    cin >> num;
+
+    // 정수를 뒤집는 함수 호출 및 출력
+    cout << "역순 출력: " << reverse(num) << endl;
+
+    return 0;  // 프로그램 종료
+}
