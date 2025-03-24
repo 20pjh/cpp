@@ -7,6 +7,59 @@
 
 using namespace std;
 
+int main() {
+    srand(time(0));  // 랜덤 시드를 시간으로 초기화하여 매번 다른 랜덤값을 생성
+
+    int choice;
+    cout << "Choose a game:\n";  // 게임 선택 안내 메시지 출력
+    cout << "1: Speed GuguDan (Multiplication)\n";  // 게임 1
+    cout << "2: Two-Digit Multiplication\n";  // 게임 2
+    cout << "3: Three-Digit Addition\n";  // 게임 3
+    cout << "4: Four-Digit Addition\n";  
+    cout << "5: Five-Digit Addition\n";  
+    cout << "6: Six-Digit Addition\n";  
+    cout << "7: Seven-Digit Addition\n";  
+    cout << "8: Eight-Digit Addition\n";  
+    cout << "9: Nine-Digit Addition\n";  
+    cout << "Enter the number of your choice: ";  // 사용자에게 선택을 입력하라는 메시지 출력
+    cin >> choice;  // 사용자로부터 게임 번호 선택 받기
+
+    // 게임 선택에 따른 함수 실행
+    switch (choice) {
+        case 1:
+            PlayGuguOnce();  
+            break;
+        case 2:
+            PlayMultiplication();  
+            break;
+        case 3:
+            PlayAddition(3);  
+            break;
+        case 4:
+            PlayAddition(4);  
+            break;
+        case 5:
+            PlayAddition(5);  
+            break;
+        case 6:
+            PlayAddition(6);  
+            break;
+        case 7:
+            PlayAddition(7); 
+            break;
+        case 8:
+            PlayAddition(8);  
+            break;
+        case 9:
+            PlayAddition(9);  
+            break;
+        default:
+            cout << "Invalid choice!" << endl;  // 잘못된 선택 입력 시 메시지 출력
+            break;
+    }
+
+    return 0;  // 프로그램 종료
+}
 // 구구단 문제를 출제하는 함수
 void PlayGuguOnce() {
     for (int i = 0; i < 10; ++i) {  // 10개의 문제를 출제
@@ -83,56 +136,4 @@ void PlayAddition(int digits) {
     }
 }
 
-int main() {
-    srand(time(0));  // 랜덤 시드를 시간으로 초기화하여 매번 다른 랜덤값을 생성
 
-    int choice;
-    cout << "Choose a game:\n";  // 게임 선택 안내 메시지 출력
-    cout << "1: Speed GuguDan (Multiplication)\n";  // 게임 1
-    cout << "2: Two-Digit Multiplication\n";  // 게임 2
-    cout << "3: Three-Digit Addition\n";  // 게임 3
-    cout << "4: Four-Digit Addition\n";  
-    cout << "5: Five-Digit Addition\n";  
-    cout << "6: Six-Digit Addition\n";  
-    cout << "7: Seven-Digit Addition\n";  
-    cout << "8: Eight-Digit Addition\n";  
-    cout << "9: Nine-Digit Addition\n";  
-    cout << "Enter the number of your choice: ";  // 사용자에게 선택을 입력하라는 메시지 출력
-    cin >> choice;  // 사용자로부터 게임 번호 선택 받기
-
-    // 게임 선택에 따른 함수 실행
-    switch (choice) {
-        case 1:
-            PlayGuguOnce();  
-            break;
-        case 2:
-            PlayMultiplication();  
-            break;
-        case 3:
-            PlayAddition(3);  
-            break;
-        case 4:
-            PlayAddition(4);  
-            break;
-        case 5:
-            PlayAddition(5);  
-            break;
-        case 6:
-            PlayAddition(6);  
-            break;
-        case 7:
-            PlayAddition(7); 
-            break;
-        case 8:
-            PlayAddition(8);  
-            break;
-        case 9:
-            PlayAddition(9);  
-            break;
-        default:
-            cout << "Invalid choice!" << endl;  // 잘못된 선택 입력 시 메시지 출력
-            break;
-    }
-
-    return 0;  // 프로그램 종료
-}

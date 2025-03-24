@@ -7,14 +7,6 @@
 
 using namespace std;  
 
-// reverseNumber 함수 정의: 주어진 정수 num을 역순으로 변환하는 함수
-int reverseNumber(int num) 
-{
-    string str = to_string(num);  // 입력된 정수 num을 문자열로 변환
-    reverse(str.begin(), str.end());  // 문자열을 뒤집음
-    return stoi(str);  // 뒤집은 문자열을 다시 정수로 변환하여 반환
-}
-
 int main() 
 {
     int num;  // 사용자 입력을 받을 정수 변수 num
@@ -26,4 +18,13 @@ int main()
     
     return 0;  // 프로그램 정상 종료
 }
+
+// reverseNumber 함수 정의: 주어진 정수 num을 역순으로 변환하는 함수
+int reverseNumber(int num) 
+{
+    string str = to_string(num);  // 입력된 정수 num을 문자열로 변환
+    reverse(str.begin(), str.end());  // 문자열을 뒤집음
+    return stoi(str);  // 뒤집은 문자열을 다시 정수로 변환하여 반환
+}
+
 

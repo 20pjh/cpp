@@ -1,8 +1,8 @@
 // p147_2 정수를 입력받아 각 자리 숫자를 역순으로 만들어 반환하는 함수 reverse()를 작성하라.
 
-#include <iostream>  // 입출력 스트림을 위한 헤더 파일
-#include <algorithm>  // std::reverse 함수 사용을 위한 헤더 파일
-#include <string>  // 문자열 변환 및 처리 함수 사용을 위한 헤더 파일
+#include <iostream>  
+#include <algorithm>  
+#include <string>  
 
 using namespace std;  // std 네임스페이스 사용
 
