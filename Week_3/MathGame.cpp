@@ -42,7 +42,7 @@ int main() {
 void PlayGuguOnce() {
     int num1, num2, answer;
 
-    while (true) {  // 정답을 맞힐 때까지 반복
+    for (;;) {  // 무한 루프 
         num1 = rand() % 9 + 1;  // 1~9 사이의 랜덤 숫자 생성
         num2 = rand() % 9 + 1;
         
@@ -61,7 +61,7 @@ void PlayGuguOnce() {
 void PlayMultiplication() {
     int num1, num2, answer;
 
-    while (true) {  // 정답을 맞힐 때까지 반복
+    for (;;) {  // 무한 루프
         num1 = rand() % 90 + 10;  // 10~99 사이의 랜덤 숫자 생성
         num2 = rand() % 90 + 10;
         
@@ -85,7 +85,7 @@ void PlayAddition(int digits) {
     for (int i = 1; i < digits; i++) minVal *= 10;
     int maxVal = minVal * 9;  // 최대값 설정 (예: 3자리수 → 999, 4자리수 → 9999)
 
-    while (true) {  // 정답을 맞힐 때까지 반복
+    for (;;) {  // 무한 루프
         num1 = rand() % (maxVal - minVal) + minVal;  // 랜덤 숫자 생성
         num2 = rand() % (maxVal - minVal) + minVal;
         
