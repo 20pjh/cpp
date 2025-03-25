@@ -1,3 +1,5 @@
+// 구구단 게임, 두 자릿수 곱셈 게임, n자릿수 덧셈 게임(1-9자릿수) 중에 하나를 골라서 맞힐 때까지 푸는 프로그램
+
 #include "p147_6.h"
 #include <iostream>
 #include <cstdlib>
