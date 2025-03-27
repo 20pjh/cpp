@@ -1,106 +1,48 @@
-// 체커 보드를 보기 좋게 화면에 출력하는 함수 구현
+// 가로나 세로 또는 대각선이 모두 0이거나 1인 부분을 찾아 화면으로 출력하는 함수 구현
 #include "p202_2.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
 
-using namespace std;
+using namespace std; // std 네임스페이스 사용
+
+// 함수 선언
+void randomMap(int map[5][5]); // 5x5 배열을 0과 1로 랜덤하게 채우는 함수
+void printMap(int map[5][5]);  // 5x5 배열을 보기 좋게 출력하는 함수
 
 int main() {
-    int map[5][5];
+    int map[5][5]; // 5x5 크기의 2차원 배열 선언
 
-    randomMap(map);
-    printMap(map);
-    checkMap(map);
+    randomMap(map); // 배열을 0과 1로 랜덤하게 채움
+    printMap(map);  // 배열을 보기 좋게 출력
 
-    return 0;
+    return 0; // 프로그램 정상 종료
 }
 
+// 5x5 배열을 0과 1로 랜덤하게 채우는 함수
 void randomMap(int map[5][5]) {
-    srand(time(0)); // 랜덤 시드 초기화
+    srand(time(0)); // 난수 생성을 위한 시드 설정 (현재 시간을 기반으로 함)
 
+    // 2차원 배열을 순회하며 0 또는 1을 랜덤하게 저장
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 5; j++) {
-            map[i][j] = rand() % 2; // 0 또는 1을 랜덤하게 저장
+            map[i][j] = rand() % 2; // 0 또는 1을 랜덤하게 할당
         }
     }
 }
 
+// 5x5 배열을 보기 좋게 출력하는 함수
 void printMap(int map[5][5]) {
-    cout << "  +-----------------+" << endl;
+    cout << "  +-----------------+" << endl; // 윗 테두리 출력
     for (int i = 0; i < 5; i++) {
-        cout << i << " | ";
+        cout << i << " | "; // 행 번호 출력
         for (int j = 0; j < 5; j++) {
-            cout << (map[i][j] ? "■" : "□") << " ";
+            cout << (map[i][j] ? "■" : "□") << " "; // 1이면 ■, 0이면 □ 출력
         }
         cout << "|" << endl;
     }
-    cout << "  +-----------------+" << endl;
-    cout << "    0 1 2 3 4" << endl;
+    cout << "  +-----------------+" << endl; // 아래 테두리 출력
+    cout << "    0 1 2 3 4" << endl; // 열 번호 출력
 }
 
-// 가로, 세로, 대각선이 모두 0이거나 1인지 체크하는 함수
-void checkMap(int map[5][5]) {
-    bool found = false; // 일치하는 줄이 있는지 여부
-
-    // 가로 줄 확인
-    for (int i = 0; i < 5; i++) {
-        bool rowSame = true;
-        for (int j = 1; j < 5; j++) {
-            if (map[i][j] != map[i][0]) {
-                rowSame = false;
-                break;
-            }
-        }
-        if (rowSame) {
-            cout << "가로 줄 " << i << "이(가) 모두 " << map[i][0] << "입니다." << endl;
-            found = true;
-        }
-    }
-
-    // 세로 줄 확인
-    for (int j = 0; j < 5; j++) {
-        bool colSame = true;
-        for (int i = 1; i < 5; i++) {
-            if (map[i][j] != map[0][j]) {
-                colSame = false;
-                break;
-            }
-        }
-        if (colSame) {
-            cout << "세로 줄 " << j << "이(가) 모두 " << map[0][j] << "입니다." << endl;
-            found = true;
-        }
-    }
-
-    // 왼쪽 위 -> 오른쪽 아래 대각선 확인
-    bool diag1Same = true;
-    for (int i = 1; i < 5; i++) {
-        if (map[i][i] != map[0][0]) {
-            diag1Same = false;
-            break;
-        }
-    }
-    if (diag1Same) {
-        cout << "대각선 (↘)이 모두 " << map[0][0] << "입니다." << endl;
-        found = true;
-    }
-
-    // 오른쪽 위 -> 왼쪽 아래 대각선 확인
-    bool diag2Same = true;
-    for (int i = 1; i < 5; i++) {
-        if (map[i][4 - i] != map[0][4]) {
-            diag2Same = false;
-            break;
-        }
-    }
-    if (diag2Same) {
-        cout << "대각선 (↙)이 모두 " << map[0][4] << "입니다." << endl;
-        found = true;
-    }
-
-    if (!found) {
-        cout << "가로, 세로, 대각선 중 모두 같은 값인 줄이 없습니다." << endl;
-    }
-}
 
