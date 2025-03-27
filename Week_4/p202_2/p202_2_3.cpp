@@ -52,7 +52,7 @@ void printMap(int map[5][5]) {
 void checkMap(int map[5][5]) {
     bool found = false; // 일치하는 줄이 있는지 여부
 
-    // 1️⃣ 가로 줄(행) 확인
+    // 가로 줄(행) 확인
     for (int i = 0; i < 5; i++) {
         bool rowSame = true;
         for (int j = 1; j < 5; j++) {
@@ -67,7 +67,7 @@ void checkMap(int map[5][5]) {
         }
     }
 
-    // 2️⃣ 세로 줄(열) 확인
+    // 세로 줄(열) 확인
     for (int j = 0; j < 5; j++) {
         bool colSame = true;
         for (int i = 1; i < 5; i++) {
@@ -82,7 +82,7 @@ void checkMap(int map[5][5]) {
         }
     }
 
-    // 3️⃣ 왼쪽 위 → 오른쪽 아래 대각선 확인 (↘)
+    // 왼쪽 위 → 오른쪽 아래 대각선 확인 (↘)
     bool diag1Same = true;
     for (int i = 1; i < 5; i++) {
         if (map[i][i] != map[0][0]) { // 왼쪽 위부터 오른쪽 아래까지 같은 값인지 확인
@@ -95,7 +95,7 @@ void checkMap(int map[5][5]) {
         found = true;
     }
 
-    // 4️⃣ 오른쪽 위 → 왼쪽 아래 대각선 확인 (↙)
+    // 오른쪽 위 → 왼쪽 아래 대각선 확인 (↙)
     bool diag2Same = true;
     for (int i = 1; i < 5; i++) {
         if (map[i][4 - i] != map[0][4]) { // 오른쪽 위부터 왼쪽 아래까지 같은 값인지 확인
@@ -108,7 +108,7 @@ void checkMap(int map[5][5]) {
         found = true;
     }
 
-    // 5️⃣ 일치하는 줄이 없을 경우 메시지 출력
+    // 일치하는 줄이 없을 경우 메시지 출력
     if (!found) {
         cout << "가로, 세로, 대각선 중 모두 같은 값인 줄이 없습니다." << endl;
     }
