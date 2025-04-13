@@ -2,42 +2,40 @@
 #define MYTIME_H
 
 #include <iostream>
-using namespace std;
 
-// 시간 정보를 다루는 MyTime 클래스 정의
+// MyTime 클래스 정의
 class MyTime {
 private:
-    // 시간 정보: 시, 분, 초
-    int hours;
-    int minutes;
-    int seconds;
+    int hours;   // 시
+    int minutes; // 분
+    int seconds; // 초
 
 public:
-    // 기본 생성자: 0시 0분 0초로 초기화
-    MyTime();
+    // 기본 생성자: 시간을 0으로 초기화
+    inline MyTime() : hours(0), minutes(0), seconds(0) {}
 
-    // 3개 값으로 초기화하는 생성자
-    MyTime(int h, int m, int s);
+    // 시, 분, 초를 받아 초기화하는 생성자
+    inline MyTime(int h, int m, int s) : hours(h), minutes(m), seconds(s) {}
 
-    // 시간 정보를 출력하는 함수 (cout 사용)
-    void print() const {
-        cout << hours << "시간 " << minutes << "분 " << seconds << "초" << endl;
+    // 두 시간을 더하는 메서드 (참조를 통해 결과를 저장)
+    inline void add(const MyTime& other, MyTime& result) const {
+        int totalSeconds = (hours + other.hours) * 3600 +
+                           (minutes + other.minutes) * 60 +
+                           (seconds + other.seconds);
+        result.hours = totalSeconds / 3600;
+        result.minutes = (totalSeconds % 3600) / 60;
+        result.seconds = totalSeconds % 60;
     }
 
-    // 참조로 결과를 반환하는 시간 덧셈 함수
-    void add(const MyTime& t, MyTime& result) const {
-        int h = hours + t.hours;
-        int m = minutes + t.minutes;
-        int s = seconds + t.seconds;
+    // 시간 데이터를 출력하는 메서드 (std::cout 사용)
+    inline void output() const {
+        std::cout << hours << "시간 " << minutes << "분 " << seconds << "초" << std::endl;
+    }
 
-        // 초와 분에 대한 자리올림 처리
-        m += s / 60;
-        s %= 60;
-        h += m / 60;
-        m %= 60;
-
-        // 덧셈 결과를 result에 저장
-        result = MyTime(h, m, s);
+    // 사용자로부터 시간 데이터를 입력받는 메서드 (std::cin 사용)
+    inline void read() {
+        std::cout << "시간(시간 분 초 형식으로 입력): ";
+        std::cin >> hours >> minutes >> seconds;
     }
 };
 
