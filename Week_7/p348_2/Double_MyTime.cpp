@@ -1,4 +1,4 @@
-#include "Du_MyTime.h"  // MyTime 헤더파일 포함
+#include "Double_MyTime.h"  // MyTime 헤더파일 포함
 
 int main() {
     double duration1, duration2;
