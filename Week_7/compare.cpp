@@ -20,10 +20,12 @@ public:
         result.imag = imag + other.imag;
     }
 
-    // 4. 멤버 함수: return + 값 전달
-    // 두 복소수를 더한 새로운 복소수 객체를 반환
-    Complex add(const Complex& other) const {
-        return Complex(real + other.real, imag + other.imag);
+    // 4. 멤버 함수: return + 참조 전달
+    // 두 복소수를 더한 값을 참조로 반환
+    Complex& add(const Complex& other) {
+        this->real += other.real;
+        this->imag += other.imag;
+        return *this;  // 자기 자신을 참조로 반환
     }
 
     // 5. 연산자 오버로딩: 복소수 더하기 연산자
@@ -64,10 +66,10 @@ int main() {
     a.add(b, c);
     cout << "3: "; c.display();
 
-    // 4. 멤버 함수: return + 값 전달
-    // a와 b의 합을 c에 저장 (값 반환 방식)
-    c = a.add(b);
-    cout << "4: "; c.display();
+    // 4. 멤버 함수: return + 참조 전달
+    // a와 b의 합을 a에 적용한 후, a를 반환
+    a.add(b);  // a의 값이 수정됨
+    cout << "4: "; a.display();  // a가 수정된 값을 출력
 
     // 5. 연산자 오버로딩: 복소수 더하기
     // a와 b의 합을 c에 저장 (연산자 오버로딩 방식)
