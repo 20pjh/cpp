@@ -44,9 +44,10 @@ void add(const Complex& a, const Complex& b, Complex& result) {
 
 // 2. 일반 함수: return + 값 전달
 // 두 복소수를 더한 새로운 복소수 객체를 반환
-Complex add(const Complex& a, const Complex& b) {
+Complex add(Complex a, Complex b) { // 값 전달
     return Complex(a.real + b.real, a.imag + b.imag);
 }
+
 
 int main() {
     Complex a(1, 2), b(3, 4), c;
