@@ -22,7 +22,6 @@ public:
         return Complex(real + other.real, imag + other.imag);
     }
 
-    // 출력용
     void print() {
         std::cout << real << " + " << imag << "i" << std::endl;
     }
@@ -40,34 +39,34 @@ Complex add(Complex a, Complex b) {
 }
 
 int main() {
-    Complex a(1, 2); // a = 1 + 2i
-    Complex b(3, 4); // b = 3 + 4i
-    Complex c;       // 결과 저장용
+    Complex a(1, 2); 
+    Complex b(3, 4); 
+    Complex c;       
 
-    // 방법 1 테스트
-    std::cout << "방법 1: ";
+    // 방법 1: 일반 함수 (void, 참조 전달)
+    std::cout << "1: ";
     add(a, b, c);
-    c.print(); // 기대 출력: 4 + 6i
+    std::cout << c.real << " + " << c.imag << "i" << std::endl; 
 
-    // 방법 2 테스트
-    std::cout << "방법 2: ";
+    // 방법 2: 일반 함수 (return, 값 전달)
+    std::cout << "2: ";
     c = add(a, b);
-    c.print(); // 기대 출력: 4 + 6i
+    std::cout << c.real << " + " << c.imag << "i" << std::endl; 
 
-    // 방법 3 테스트
-    std::cout << "방법 3: ";
+    // 방법 3: 멤버 함수 (void, 참조 전달) 
+    std::cout << "3: ";
     c.add(a, b);
-    c.print(); // 기대 출력: 4 + 6i
+    std::cout << c.real << " + " << c.imag << "i" << std::endl; 
 
-    // 방법 4 테스트
-    std::cout << "방법 4: ";
+    // 방법 4: 멤버 함수 (return, 참조 전달)
+    std::cout << "4: ";
     c = a.add(b);
-    c.print(); // 기대 출력: 4 + 6i
+    std::cout << c.real << " + " << c.imag << "i" << std::endl; 
 
-    // 방법 5 테스트
-    std::cout << "방법 5: ";
+    // 방법 5: 연산자 오버로딩
+    std::cout << "5: ";
     c = a + b;
-    c.print(); // 기대 출력: 4 + 6i
+    std::cout << c.real << " + " << c.imag << "i" << std::endl; 
 
     return 0;
 }
